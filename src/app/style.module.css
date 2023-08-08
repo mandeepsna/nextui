@@ -1,0 +1,43 @@
+.center {
+   
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border:2px solid white
+   
+  }
+ .margin
+ {
+  margin-top: 5rem;
+ }
+ .height
+ {
+   height: 250px;
+  background-color: #0d7cd1
+
+ }
+ .radius
+ {
+  border-radius: 10px;
+ }
+ .horizontalLine
+ {
+  border-top: 3px solid white;
+  width: 95%;
+  text-align: center;
+ }
+ .overflow
+ {
+  color: white;
+  padding: 15px;
+  overflow-y: scroll;
+ }
+ .pageColor
+ {
+  background-color: #065592;
+ 
+ }
