@@ -1,7 +1,15 @@
+"use client";
 import React from "react";
+import { useState, useEffect } from "react";
 import Styles from "../src/app/style.module.css";
-const Taskmanager = async () => {
-  const products = await FetchserverApi();
+import axios from "axios";
+const Taskmanager = () => {
+  let [products, setProduct] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/employee").then((response) => {
+      setProduct(response.data);
+    });
+  }, []);
   return (
     <>
       <div
@@ -12,9 +20,9 @@ const Taskmanager = async () => {
         <ol>
           {products.slice(0, 10).map((element) => {
             return (
-              <li key={element.id}>
-                {element.title}  {element.price}  {element.brand} {" "}
-                {element.category}
+              <li key={element.empid}>
+                {element.dob} {element.empid} {element.name} {element.city}{" "}
+                {element.age} {element.salary}  {element.state}
               </li>
             );
           })}
@@ -25,9 +33,3 @@ const Taskmanager = async () => {
 };
 
 export default Taskmanager;
-
-const FetchserverApi = async () => {
-  const response = await fetch("https://dummyjson.com/products");
-  const data = await response.json();
-  return data.products;
-};
