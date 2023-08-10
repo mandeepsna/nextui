@@ -6,7 +6,7 @@ import Styles from "../src/app/style.module.css";
 import axios from "axios";
 const Taskmanager = () => {
   let [products, setProduct] = useState([]);
-  const value;
+
   useEffect(() => {
     axios.get("http://localhost:3000/api/employee").then((response) => {
       setProduct(response.data);
